@@ -1,0 +1,153 @@
+.navbar {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    top: 0;
+    z-index: 1000; /* raised so dropdown is always above content */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* ensures dropdown positioning works */
+    overflow: visible; /* allows dropdown to be fully visible */
+}
+
+.navbar .logo {
+    width: 160px;
+    transition: transform 0.3s ease;
+}
+.navbar .logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    color: #49557e;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar-menu a,
+.navbar-menu .active {
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.navbar-menu a:hover {
+    border-bottom: 2px solid tomato;
+    color: tomato;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar button {
+    background: linear-gradient(45deg, tomato, #ff7f66);
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 8px rgba(255, 99, 71, 0.3);
+}
+.navbar button:hover {
+    background: linear-gradient(45deg, #ff7f66, tomato);
+    transform: translateY(-2px);
+}
+
+.navbar-search-icon {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.navbar-search-icon:hover {
+    transform: scale(1.1);
+}
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    top: -8px;
+    right: -8px;
+}
+
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+.navbar-profile img {
+    transition: transform 0.3s ease;
+}
+.navbar-profile:hover img {
+    transform: scale(1.1);
+}
+
+/* Profile Dropdown Styling */
+.nav-profile-dropdown {
+    position: absolute;
+    top: calc(100% + 8px); /* slight gap below profile icon */
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 160px;
+    z-index: 2000; /* ensures it's above everything */
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 8px 16px;
+}
+
+.nav-profile-dropdown li:hover {
+    color: tomato;
+    background: rgba(255, 99, 71, 0.08);
+}
+
+.nav-profile-dropdown hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 4px 0;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 2px solid tomato;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+    background: tomato;
+    color: white;
+    transform: rotate(15deg) scale(1.1);
+}
